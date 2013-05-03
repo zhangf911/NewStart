@@ -1,0 +1,44 @@
+#===============Library Project makefile==========
+PROJECT = Library
+VERSION = 0.1
+HOME = ../..
+#===================Project End================
+
+#=====================Bin======================
+LINK = $(PROJECT).Bin
+TARGET = $(PROJECT).$(VERSION).Bin
+#==============================================
+
+
+#=====================Config===================
+
+CC = g++
+CFLAGS = -g -Wall -I ../inc
+
+LFLAGS = -L.
+
+SUB_CPPS = $(shell ls | grep cpp)
+OBJS = $(SUB_CPPS:.cpp=.o)
+
+#===============================================
+
+#======================Compile==================
+
+%.o : %.cpp
+	$(CC) -c $(CFLAGS) $< -O $@
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS) $(LFLAGS)
+
+install : $(TARGET)
+	@cp $(TARGET) $(HOME)/bin/
+	@rm -f	$(HOME)/bin/$(LINK)
+
+clean : 
+	@rm -f $(OBJS)
+	@rm -f $(TARGET)
+	@rm -f $(HOME)/bin/$(TARGET)
+ 
+#================================================
