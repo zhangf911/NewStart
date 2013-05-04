@@ -1,5 +1,5 @@
 #===============Library Project makefile==========
-PROJECT = Library
+PROJECT = UnitTest
 VERSION = 0.1
 HOME = ../..
 #===================Project End================
@@ -13,7 +13,7 @@ TARGET = $(PROJECT).$(VERSION).Bin
 #=====================Config===================
 
 CC = g++
-CFLAGS = -g -Wall -I ../include
+CFLAGS = -g -Wall -I ../inc -I ../../
 
 LFLAGS = -L.
 
