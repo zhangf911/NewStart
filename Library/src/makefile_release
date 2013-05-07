@@ -13,9 +13,9 @@ TARGET = $(PROJECT).$(VERSION).Bin
 #=====================Config===================
 
 CC = g++
-CFLAGS = -g -Wall -I ../include
+CFLAGS = -g -pg -Wall -I ../include
 
-LFLAGS = -L.
+LFLAGS = -pg -L.
 
 SUB_CPPS = $(shell ls | grep cpp)
 OBJS = $(SUB_CPPS:.cpp=.o)

@@ -20,7 +20,9 @@ using std::list;
 using std::map;
 #include <set>
 using std::set;
-
+// 字符串
+#include <string>
+using std::string;
 
 
 #endif
