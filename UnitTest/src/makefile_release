@@ -13,7 +13,7 @@ TARGET = $(PROJECT).$(VERSION).Bin
 #=====================Config===================
 
 CC = g++
-CFLAGS = -g -Wall -I ../inc -I ../../
+CFLAGS = -g -Wall -std=c++0x -I ../include -I ../../
 
 LFLAGS = -L.
 
